@@ -10,4 +10,4 @@ echo "-------------------------------------------" >> $vacuum_log
 date >> $vacuum_log
 echo "-------------------------------------------" >> $vacuum_log
 
-/usr/bin/vacuumdb -v -d $db_name &>> $vacuum_log
+vacuumdb -v -d $db_name >> $vacuum_log 2>&1

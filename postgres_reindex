@@ -10,4 +10,4 @@ echo "-------------------------------------------" >> $reindex_log
 date >> $reindex_log
 echo "-------------------------------------------" >> $reindex_log
 
-/usr/bin/reindexdb $db_name &>> $reindex_log
+reindexdb $db_name >> $reindex_log 2>&1
