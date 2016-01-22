@@ -1,6 +1,5 @@
 # Basic configuration
-PATH=:$PATH
-#MAILTO=
+PATH=/bin:/usr/bin:/usr/local/bin:$PATH
 
 ###############################################################
 #.---------------- minute (0 - 59)
