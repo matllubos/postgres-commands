@@ -1,0 +1,9 @@
+#!/bin/bash
+
+source /etc/postgres_commands.cfg
+
+PGPASSWORD=$remote_password pg_dumpall -g -h $remote_host -p $remote_port -U $remote_user --file=pg_backup_globals_`date +%d-%m-%Y_%H:%M:%S`.sql
+for db_name in $db_names
+do
+	PGPASSWORD=$remote_password pg_dump -h $remote_host -p $remote_port -U $user -Fc -d $db_name --file='pg_backup_'$db_name'_'`date +%d-%m-%Y_%H:%M:%S`'.dump'
+done
